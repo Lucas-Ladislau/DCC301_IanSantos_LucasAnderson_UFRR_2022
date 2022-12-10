@@ -2,28 +2,28 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 
-entity contador_sincrono is
-	port
+ENTITY contador_sincrono IS
+	PORT
 	(
-		clk		: in std_logic;
-		reset	: in std_logic;
-		enable 	: in std_logic;
-		q		: out std_logic_vector(3 downto 0)
+		clk		: IN std_logic;
+		reset	: IN std_logic;
+		enable 	: IN std_logic;
+		q		: OUT std_logic_vector(3 DOWNTO 0)
 	);
-end entity;
+END ENTITY;
 
-architecture behavior of contador_sincrono is
-begin
-	process (clk,reset)
-		variable   cnt	: integer range 0 to 15;
-	begin
-			if reset = '1' then
+ARCHITECTURE behavior OF contador_sincrono IS
+BEGIN
+	PROCESS (clk,reset)
+		VARIABLE   cnt	: integer RANGE 0 TO 15;
+	BEGIN
+			IF reset = '1' THEN
 				cnt := 0;
-			elsif clk'event and clk = '1' then
-				if enable='1' then
+			ELSIF clk'EVENT and clk = '1' THEN
+				IF enable='1' THEN
 				cnt := cnt + 1;
-				end if;
-			end if;
+				END IF;
+			END IF;
 		q <= conv_std_logic_vector(cnt,4);
-	end process;
-end behavior;
+	END PROCESS;
+END behavior;

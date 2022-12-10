@@ -3,17 +3,17 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity rom_memory is
-    port(
-        in_data     : in std_logic_vector(7 downto 0);
-        clock       : in std_logic;
-        out_data    : out std_logic_vector(7 downto 0)
+ENTITY rom_memory IS
+    PORT(
+        in_data     : IN std_logic_vector(7 DOWNTO 0);
+        clock       : IN std_logic;
+        out_data    : OUT std_logic_vector(7 DOWNTO 0)
     );
-end entity;
+END ENTITY;
 
-architecture main of rom_memory is
-    type ROM is array(0 to 255) of std_logic_vector(7 downto 0);
-    signal rom_memory : ROM := (
+ARCHITECTURE main OF rom_memory IS
+    TYPE ROM IS ARRAY(0 TO 255) OF std_logic_vector(7 DOWNTO 0);
+    SIGNAL rom_memory : ROM := (
 
 	 -- load immediate 0101
         0 => "01010000", -- li $s0 valor0
@@ -25,11 +25,11 @@ architecture main of rom_memory is
         4 => "00000001", -- add = $s0 + $s1
         5 => "00010001", -- sub $s0 $s1
         6 => "00100001", -- mult $s0 $s1
-others => "00000000"
+OTHERS => "00000000"
     );
-    begin
-        process (clock)
-		  begin
+    BEGIN
+        PROCESS (clock)
+		  BEGIN
             out_data <= rom_memory(to_integer(unsigned(in_data)));
-        end process;
-end main;  
+        END PROCESS;
+END main;  

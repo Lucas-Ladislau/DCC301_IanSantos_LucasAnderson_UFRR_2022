@@ -1,17 +1,17 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity multiplexador is
-    Port ( SEL : in  STD_LOGIC ;     -- select input
-           A   : in  STD_LOGIC_VECTOR (7 downto 0);     -- inputA
-			  B   : in  STD_LOGIC_VECTOR (7 downto 0);     -- inputB
-           X   : out STD_LOGIC_VECTOR (7 downto 0));                        -- output
-end multiplexador;
+ENTITY multiplexador IS
+    PORT ( SEL : IN  STD_LOGIC ;     -- select input
+           A   : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);     -- inputA
+			  B   : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);     -- inputB
+           X   : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));                        -- output
+END multiplexador;
 
-architecture Behavioral of multiplexador is
-begin
-with SEL select
-    X <= A when '0',
-         B when '1';
+ARCHITECTURE Behavioral OF multiplexador IS
+BEGIN
+WITH SEL SELECT
+    X <= A WHEN '0',
+         B WHEN '1';
         
-end Behavioral;
+END Behavioral;

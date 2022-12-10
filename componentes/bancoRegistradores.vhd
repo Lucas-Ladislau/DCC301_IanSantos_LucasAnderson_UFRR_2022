@@ -2,31 +2,31 @@ library Ieee;
 Use Ieee.std_logic_1164.all;
 Use Ieee.numeric_std.all;
 
-Entity bancoRegistradores is port (
-	clock			: in std_logic;
-	escreveReg		:in std_logic;
-	addressReg1		:in std_logic_vector(1 downto 0);
-	addressReg2		:in std_logic_vector(1 downto 0);
-	escreveDado		:in std_logic_vector(7 downto 0);
-	out_Reg1		:out std_logic_vector(7 downto 0);
-	out_Reg2		:out std_logic_vector(7 downto 0)
+ENTITY bancoRegistradores IS PORT (
+	clock			: IN std_logic;
+	escreveReg		: IN std_logic;
+	addressReg1		: IN std_logic_vector(1 DOWNTO 0);
+	addressReg2		: IN std_logic_vector(1 DOWNTO 0);
+	escreveDado		: IN std_logic_vector(7 DOWNTO 0);
+	out_Reg1		: OUT std_logic_vector(7 DOWNTO 0);
+	out_Reg2		: OUT std_logic_vector(7 DOWNTO 0)
 );
-End bancoRegistradores;
+END bancoRegistradores;
 
-Architecture main of bancoRegistradores is 
+ARCHITECTURE main OF bancoRegistradores IS 
 
-	Type bancoRegistradores is Array (0 to 3)of std_logic_vector (7 downto 0);
-	Signal registradores : bancoRegistradores;
+	TYPE bancoRegistradores IS ARRAY (0 TO 3)OF std_logic_vector (7 DOWNTO 0);
+	SIGNAL registradores : bancoRegistradores;
 
-Begin
-		Process (clock)
-		Begin
-				if rising_edge(clock) then
-					if (escreveReg = '1') then
+BEGIN
+		PROCESS (clock)
+		BEGIN
+				IF rising_edge(clock) THEN
+					IF (escreveReg = '1') THEN
 						registradores(to_integer(unsigned(addressReg1))) <= escreveDado; 
-					End if;
-				End if;
+					END IF;
+				END IF;
 				out_Reg1 <= registradores(to_integer(unsigned(addressReg1)));
 				out_Reg2 <= registradores(to_integer(unsigned(addressReg2)));
-		End Process;
-End main;
+		END PROCESS;
+END main;

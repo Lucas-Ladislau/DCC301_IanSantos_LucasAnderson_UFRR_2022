@@ -1,18 +1,18 @@
 library Ieee;
 use Ieee.std_logic_1164.All;
 
-entity bitExtensor4_8 is 
-	Port (
-		in_data  : in Std_Logic_Vector (3 downto 0);
-		s : out Std_Logic_Vector (7 downto 0)
+ENTITY bitExtensor4_8 IS 
+	PORT (
+		in_data  : IN Std_Logic_Vector (3 DOWNTO 0);
+		s : OUT Std_Logic_Vector (7 DOWNTO 0)
 	);
 
-end bitExtensor4_8;
+END bitExtensor4_8;
 
-architecture Behavior of bitExtensor4_8 is 
-begin
-	Process (in_data)
-	Begin 
+ARCHITECTURE Behavior OF bitExtensor4_8 IS 
+BEGIN
+	PROCESS (in_data)
+	BEGIN 
 		s <= ("0000") & in_data;	
-	End Process;
-end Behavior;
+	END PROCESS;
+END Behavior;
