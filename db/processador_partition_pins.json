@@ -4,35 +4,63 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "s[0]",
+					"name" : "JUMP",
 					"strict" : false
 				},
 				{
-					"name" : "s[1]",
+					"name" : "BRANCH",
 					"strict" : false
 				},
 				{
-					"name" : "s[2]",
+					"name" : "MEMREAD",
 					"strict" : false
 				},
 				{
-					"name" : "s[3]",
+					"name" : "MEMTOREG",
 					"strict" : false
 				},
 				{
-					"name" : "in_data[0]",
+					"name" : "ALUOP[0]",
 					"strict" : false
 				},
 				{
-					"name" : "in_data[1]",
+					"name" : "ALUOP[1]",
 					"strict" : false
 				},
 				{
-					"name" : "in_data[2]",
+					"name" : "ALUOP[2]",
 					"strict" : false
 				},
 				{
-					"name" : "in_data[3]",
+					"name" : "ALUOP[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MEMWRITE",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSRC",
+					"strict" : false
+				},
+				{
+					"name" : "REGWRITE",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[1]",
 					"strict" : false
 				}
 			]

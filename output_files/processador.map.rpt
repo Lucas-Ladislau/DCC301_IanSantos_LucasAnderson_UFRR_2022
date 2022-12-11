@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Wed Dec  7 17:54:53 2022
+Sun Dec 11 00:04:40 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -43,14 +43,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Dec  7 17:54:53 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Dec 11 00:04:40 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; processador                                 ;
-; Top-level Entity Name           ; bitExtensor4_8                              ;
+; Top-level Entity Name           ; unidade_controle                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 12                                          ;
+; Total pins                      ; 16                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; bitExtensor4_8     ; processador        ;
+; Top-level entity name                                                           ; unidade_controle   ; processador        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -166,49 +166,49 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                            ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
-; componentes/bitExtensor4_8.vhd   ; yes             ; User VHDL File  ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bitExtensor4_8.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                              ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+; componentes/unidade_controle.vhd ; yes             ; User VHDL File  ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/unidade_controle.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 0           ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 0           ;
-;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 0           ;
-;     -- 5 input functions                    ; 0           ;
-;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 0           ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 12          ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; s[0]~output ;
-; Maximum fan-out                             ; 1           ;
-; Total fan-out                               ; 16          ;
-; Average fan-out                             ; 0.67        ;
-+---------------------------------------------+-------------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 5               ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 9               ;
+;     -- 7 input functions                    ; 0               ;
+;     -- 6 input functions                    ; 0               ;
+;     -- 5 input functions                    ; 0               ;
+;     -- 4 input functions                    ; 6               ;
+;     -- <=3 input functions                  ; 3               ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 16              ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; OPCODE[3]~input ;
+; Maximum fan-out                             ; 10              ;
+; Total fan-out                               ; 58              ;
+; Average fan-out                             ; 1.41            ;
++---------------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
-; |bitExtensor4_8            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 12   ; 0            ; |bitExtensor4_8     ; bitExtensor4_8 ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+------------------+--------------+
+; |unidade_controle          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 16   ; 0            ; |unidade_controle   ; unidade_controle ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -232,13 +232,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-; boundary_port         ; 12                          ;
+; arriav_lcell_comb     ; 10                          ;
+;     normal            ; 10                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 6                           ;
+; boundary_port         ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.36                        ;
 +-----------------------+-----------------------------+
 
 
@@ -257,28 +260,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Dec  7 17:54:48 2022
+    Info: Processing started: Sun Dec 11 00:04:35 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/somador8bit.vhd
+    Info (12022): Found design unit 1: somador8bit-Behavioral File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/somador8bit.vhd Line: 14
+    Info (12023): Found entity 1: somador8bit File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/somador8bit.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/somador1bit.vhd
+    Info (12022): Found design unit 1: somador1bit-Behavioral File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/somador1bit.vhd Line: 14
+    Info (12023): Found entity 1: somador1bit File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/somador1bit.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/rom_memory.vhd
+    Info (12022): Found design unit 1: rom_memory-main File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/rom_memory.vhd Line: 14
+    Info (12023): Found entity 1: rom_memory File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/rom_memory.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/multiplexador.vhd
+    Info (12022): Found design unit 1: multiplexador-Behavioral File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/multiplexador.vhd Line: 11
+    Info (12023): Found entity 1: multiplexador File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/multiplexador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/contador_sincrono.vhd
+    Info (12022): Found design unit 1: contador_sincrono-behavior File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/contador_sincrono.vhd Line: 15
+    Info (12023): Found entity 1: contador_sincrono File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/contador_sincrono.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/bancoRegistradores.vhd
+    Info (12022): Found design unit 1: bancoRegistradores-main File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd Line: 16
+    Info (12023): Found entity 1: bancoRegistradores File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file componentes/bitExtensor4_8.vhd
     Info (12022): Found design unit 1: bitExtensor4_8-Behavior File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bitExtensor4_8.vhd Line: 12
     Info (12023): Found entity 1: bitExtensor4_8 File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bitExtensor4_8.vhd Line: 4
-Info (12127): Elaborating entity "bitExtensor4_8" for the top level hierarchy
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "s[4]" is stuck at GND File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bitExtensor4_8.vhd Line: 7
-    Warning (13410): Pin "s[5]" is stuck at GND File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bitExtensor4_8.vhd Line: 7
-    Warning (13410): Pin "s[6]" is stuck at GND File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bitExtensor4_8.vhd Line: 7
-    Warning (13410): Pin "s[7]" is stuck at GND File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bitExtensor4_8.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/ram_memory.vhd
+    Info (12022): Found design unit 1: ram_memory-Behavioral File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ram_memory.vhd Line: 16
+    Info (12023): Found entity 1: ram_memory File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ram_memory.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/PC.vhd
+    Info (12022): Found design unit 1: PC-Behavioral File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/PC.vhd Line: 12
+    Info (12023): Found entity 1: PC File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/PC.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/unidade_controle.vhd
+    Info (12022): Found design unit 1: unidade_controle-Behavioral File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/unidade_controle.vhd Line: 20
+    Info (12023): Found entity 1: unidade_controle File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/unidade_controle.vhd Line: 5
+Info (12127): Elaborating entity "unidade_controle" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 8 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 481 megabytes
-    Info: Processing ended: Wed Dec  7 17:54:53 2022
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/unidade_controle.vhd Line: 7
+Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 9 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 477 megabytes
+    Info: Processing ended: Sun Dec 11 00:04:40 2022
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:14
 
 
