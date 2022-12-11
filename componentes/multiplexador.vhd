@@ -5,13 +5,13 @@ ENTITY multiplexador IS
     PORT ( SEL : IN  STD_LOGIC ;     -- select input
            A   : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);     -- inputA
 			  B   : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);     -- inputB
-           X   : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));                        -- output
+           Sout   : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)); -- output
 END multiplexador;
 
 ARCHITECTURE Behavioral OF multiplexador IS
 BEGIN
 WITH SEL SELECT
-    X <= A WHEN '0',
+    Sout <= A WHEN '0',
          B WHEN '1';
         
 END Behavioral;
