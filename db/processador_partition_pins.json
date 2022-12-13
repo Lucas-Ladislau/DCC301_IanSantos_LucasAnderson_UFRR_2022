@@ -236,6 +236,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "overflow",
+					"strict" : false
+				},
+				{
 					"name" : "out_out_mult4_2X1_ram_ula[0]",
 					"strict" : false
 				},

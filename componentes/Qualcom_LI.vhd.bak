@@ -21,7 +21,7 @@ ENTITY Qualcom_LI IS
 		out_rs : out std_logic_vector(1 downto 0);
 		out_rt : out std_logic_vector(1 downto 0);
 		out_endereco : out std_logic_vector(3 downto 0);
-		overflow        : out std_logic;
+		
 		out_out_mult4_2X1_ram_ula : out std_logic_vector(7 downto 0)
 	);
 END Qualcom_LI;
@@ -105,8 +105,8 @@ ARCHITECTURE Behavioral OF Qualcom_LI IS
 		inA 	: in  std_logic_vector(7 downto 0);
 		inB  	: in  std_logic_vector(7 downto 0);
 		Sout  : out std_logic_vector(7 downto 0);
-		s_zero: out std_logic;
-		overflow: out std_logic);
+		s_zero: out std_logic	
+		);
 	end COMPONENT;
 	
 	COMPONENT and_gate IS
@@ -165,9 +165,6 @@ ARCHITECTURE Behavioral OF Qualcom_LI IS
 	--rom
 	signal out_rom: std_logic_vector(7 downto 0);
 	
-	-- identificador de overflow
-    signal estouroMEM : std_logic;
-	
 	--instruction division
 	signal out_di_7_4: std_logic_vector(7 downto 4);
 	signal out_di_3_2: std_logic_vector(1 downto 0);
@@ -211,7 +208,7 @@ BEGIN
 	port_map_banco_de_registradores: bancoRegistradores port map(clock,out_uc_reg_write,out_di_3_2,out_di_1_0,out_mult4_2x1_ram_ula,out_br_reg_A,out_br_reg_B);
 	port_map_extensor_sinal_2_8: bitExtensor2_8 port map (out_di_1_0,out_ES_2_8);
 	port_map_mult1_2x1_br_ula: multiplexador port map (out_uc_ula_src,out_br_reg_B,out_ES_2_8,out_mult1_2x1_br_ula);
-	port_map_ula: ula port map (out_uc_ula_op,out_br_reg_A,out_mult1_2x1_br_ula,out_ula_result,out_ula_zero,estouroMEM);
+	port_map_ula: ula port map (out_uc_ula_op,out_br_reg_A,out_mult1_2x1_br_ula,out_ula_result,out_ula_zero);
 	port_map_ram: ram_memory port map (clock,out_uc_mem_write,out_uc_mem_read,out_ula_result,out_ES_2_8,out_ram);
 	port_map_mult4_2x1_ram_ula: multiplexador port map (out_uc_memto_reg,out_ula_result,out_ram,out_mult4_2x1_ram_ula);
 	port_map_extensor_sinal_4_8: bitExtensor4_8 port map (out_di_3_0,out_ES_4_8);
@@ -231,6 +228,5 @@ BEGIN
 	outUla <= out_ula_result;
 	outRam <= out_ram;
 	out_out_mult4_2X1_ram_ula <= out_mult4_2x1_ram_ula;
-	overflow <= estouroMEM;
 	
 END Behavioral;

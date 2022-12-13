@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Tue Dec 13 01:15:04 2022
+Tue Dec 13 05:02:46 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -22,9 +22,10 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  14. Source assignments for ram_memory:port_map_ram|altsyncram:mem_rtl_0|altsyncram_hhu1:auto_generated
  15. Parameter Settings for Inferred Entity Instance: ram_memory:port_map_ram|altsyncram:mem_rtl_0
  16. altsyncram Parameter Settings by Entity Instance
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 17. Port Connectivity Checks: "ula:port_map_ula|somador8bit:soma"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -51,14 +52,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 13 01:15:04 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Dec 13 05:02:46 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; processador                                 ;
 ; Top-level Entity Name           ; Qualcom_LI                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 40                                          ;
-; Total pins                      ; 69                                          ;
+; Total pins                      ; 70                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 32                                          ;
 ; Total DSP Blocks                ; 1                                           ;
@@ -183,6 +184,8 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
 ; componentes/portoes_logicos/and_gate.vhd        ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/portoes_logicos/and_gate.vhd        ;         ;
 ; componentes/zero.vhd                            ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/zero.vhd                            ;         ;
+; componentes/somador8bit.vhd                     ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/somador8bit.vhd                     ;         ;
+; componentes/somador1bit.vhd                     ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/somador1bit.vhd                     ;         ;
 ; componentes/rom_memory.vhd                      ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/rom_memory.vhd                      ;         ;
 ; componentes/multiplexador.vhd                   ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/multiplexador.vhd                   ;         ;
 ; componentes/bancoRegistradores.vhd              ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd              ;         ;
@@ -195,6 +198,7 @@ https://fpgasoftware.intel.com/eula.
 ; componentes/divisao_instrucao.vhd               ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/divisao_instrucao.vhd               ;         ;
 ; componentes/Qualcom_LI.vhd                      ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd                      ;         ;
 ; componentes/add1.vhd                            ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/add1.vhd                            ;         ;
+; componentes/multiplicador.vhd                   ; yes             ; User VHDL File                                        ; /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/multiplicador.vhd                   ;         ;
 ; altsyncram.tdf                                  ; yes             ; Megafunction                                          ; /home/lucas_anderson/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                  ;         ;
 ; stratix_ram_block.inc                           ; yes             ; Megafunction                                          ; /home/lucas_anderson/intelFPGA_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                           ;         ;
 ; lpm_mux.inc                                     ; yes             ; Megafunction                                          ; /home/lucas_anderson/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                     ;         ;
@@ -209,33 +213,33 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                        ;
-+---------------------------------------------+--------------------------------------+
-; Resource                                    ; Usage                                ;
-+---------------------------------------------+--------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 68                                   ;
-;                                             ;                                      ;
-; Combinational ALUT usage for logic          ; 107                                  ;
-;     -- 7 input functions                    ; 0                                    ;
-;     -- 6 input functions                    ; 26                                   ;
-;     -- 5 input functions                    ; 34                                   ;
-;     -- 4 input functions                    ; 6                                    ;
-;     -- <=3 input functions                  ; 41                                   ;
-;                                             ;                                      ;
-; Dedicated logic registers                   ; 40                                   ;
-;                                             ;                                      ;
-; I/O pins                                    ; 69                                   ;
-; Total MLAB memory bits                      ; 0                                    ;
-; Total block memory bits                     ; 32                                   ;
-;                                             ;                                      ;
-; Total DSP Blocks                            ; 1                                    ;
-;                                             ;                                      ;
-; Maximum fan-out node                        ; rom_memory:port_map_rom|rom_memory~2 ;
-; Maximum fan-out                             ; 50                                   ;
-; Total fan-out                               ; 768                                  ;
-; Average fan-out                             ; 2.61                                 ;
-+---------------------------------------------+--------------------------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 73          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 108         ;
+;     -- 7 input functions                    ; 1           ;
+;     -- 6 input functions                    ; 33          ;
+;     -- 5 input functions                    ; 18          ;
+;     -- 4 input functions                    ; 14          ;
+;     -- <=3 input functions                  ; 42          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 40          ;
+;                                             ;             ;
+; I/O pins                                    ; 70          ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 32          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 1           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 48          ;
+; Total fan-out                               ; 764         ;
+; Average fan-out                             ; 2.57        ;
++---------------------------------------------+-------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -243,7 +247,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name        ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
-; |Qualcom_LI                                             ; 107 (0)             ; 40 (0)                    ; 32                ; 1          ; 69   ; 0            ; |Qualcom_LI                                                                             ; Qualcom_LI         ; work         ;
+; |Qualcom_LI                                             ; 108 (0)             ; 40 (0)                    ; 32                ; 1          ; 70   ; 0            ; |Qualcom_LI                                                                             ; Qualcom_LI         ; work         ;
 ;    |PC:port_map_pc|                                     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|PC:port_map_pc                                                              ; PC                 ; work         ;
 ;    |add1:port_map_addr|                                 ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|add1:port_map_addr                                                          ; add1               ; work         ;
 ;    |bancoRegistradores:port_map_banco_de_registradores| ; 20 (20)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|bancoRegistradores:port_map_banco_de_registradores                          ; bancoRegistradores ; work         ;
@@ -253,7 +257,16 @@ https://fpgasoftware.intel.com/eula.
 ;       |altsyncram:mem_rtl_0|                            ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |Qualcom_LI|ram_memory:port_map_ram|altsyncram:mem_rtl_0                                ; altsyncram         ; work         ;
 ;          |altsyncram_hhu1:auto_generated|               ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |Qualcom_LI|ram_memory:port_map_ram|altsyncram:mem_rtl_0|altsyncram_hhu1:auto_generated ; altsyncram_hhu1    ; work         ;
 ;    |rom_memory:port_map_rom|                            ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|rom_memory:port_map_rom                                                     ; rom_memory         ; work         ;
-;    |ula:port_map_ula|                                   ; 52 (52)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula                                                            ; ula                ; work         ;
+;    |ula:port_map_ula|                                   ; 51 (39)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula                                                            ; ula                ; work         ;
+;       |multiplicador:pot_map_multi|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|multiplicador:pot_map_multi                                ; multiplicador      ; work         ;
+;       |somador8bit:soma|                                ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|somador8bit:soma                                           ; somador8bit        ; work         ;
+;          |somador1bit:b1|                               ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|somador8bit:soma|somador1bit:b1                            ; somador1bit        ; work         ;
+;          |somador1bit:b3|                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|somador8bit:soma|somador1bit:b3                            ; somador1bit        ; work         ;
+;          |somador1bit:b4|                               ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|somador8bit:soma|somador1bit:b4                            ; somador1bit        ; work         ;
+;          |somador1bit:b5|                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|somador8bit:soma|somador1bit:b5                            ; somador1bit        ; work         ;
+;          |somador1bit:b6|                               ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|somador8bit:soma|somador1bit:b6                            ; somador1bit        ; work         ;
+;          |somador1bit:b7|                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|ula:port_map_ula|somador8bit:soma|somador1bit:b7                            ; somador1bit        ; work         ;
+;    |unidade_controle:port_map_unidade_de_controle|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Qualcom_LI|unidade_controle:port_map_unidade_de_controle                               ; unidade_controle   ; work         ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -267,33 +280,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------------------------------------+
 
 
-+-----------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary  ;
-+---------------------------------+-------------+
-; Statistic                       ; Number Used ;
-+---------------------------------+-------------+
-; Independent 9x9                 ; 1           ;
-; Total number of DSP blocks      ; 1           ;
-;                                 ;             ;
-; Fixed Point Unsigned Multiplier ; 1           ;
-+---------------------------------+-------------+
++----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary ;
++-------------------------------+--------------+
+; Statistic                     ; Number Used  ;
++-------------------------------+--------------+
+; Independent 9x9               ; 1            ;
+; Total number of DSP blocks    ; 1            ;
+;                               ;              ;
+; Fixed Point Signed Multiplier ; 1            ;
++-------------------------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                 ;
-+----------------------------------------------------+-----------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal   ; Free of Timing Hazards ;
-+----------------------------------------------------+-----------------------+------------------------+
-; ula:port_map_ula|multi[0]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; ula:port_map_ula|multi[1]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; ula:port_map_ula|multi[2]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; ula:port_map_ula|multi[3]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; ula:port_map_ula|multi[4]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; ula:port_map_ula|multi[5]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; ula:port_map_ula|multi[6]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; ula:port_map_ula|multi[7]                          ; ula:port_map_ula|Mux2 ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                       ;                        ;
-+----------------------------------------------------+-----------------------+------------------------+
++------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                  ;
++----------------------------------------------------+------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal    ; Free of Timing Hazards ;
++----------------------------------------------------+------------------------+------------------------+
+; ula:port_map_ula|overflow                          ; ula:port_map_ula|Mux10 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                        ;                        ;
++----------------------------------------------------+------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -321,14 +327,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------+-----------------------------------+------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |Qualcom_LI|ula:port_map_ula|Mux0 ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |Qualcom_LI|ula:port_map_ula|Mux9 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; No         ; |Qualcom_LI|ula:port_map_ula|Mux10 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -421,6 +426,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------+
 
 
++---------------------------------------------------------------+
+; Port Connectivity Checks: "ula:port_map_ula|somador8bit:soma" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -429,26 +443,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_ff             ; 40                          ;
 ;     ENA               ; 32                          ;
 ;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 109                         ;
+; arriav_lcell_comb     ; 110                         ;
 ;     arith             ; 25                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 8                           ;
 ;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 15                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
 ;     normal            ; 84                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 5                           ;
-;         5 data inputs ; 19                          ;
-;         6 data inputs ; 26                          ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 13                          ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 33                          ;
 ; arriav_mac            ; 1                           ;
-; boundary_port         ; 69                          ;
+; boundary_port         ; 70                          ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.70                        ;
-; Average LUT depth     ; 4.44                        ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 5.94                        ;
 +-----------------------+-----------------------------+
 
 
@@ -467,7 +483,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Dec 13 01:14:58 2022
+    Info: Processing started: Tue Dec 13 05:02:40 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -534,41 +550,43 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
 Info (12021): Found 2 design units, including 1 entities, in source file componentes/add1.vhd
     Info (12022): Found design unit 1: add1-main File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/add1.vhd Line: 12
     Info (12023): Found entity 1: add1 File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/add1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/multiplicador.vhd
+    Info (12022): Found design unit 1: multiplicador-main File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/multiplicador.vhd Line: 13
+    Info (12023): Found entity 1: multiplicador File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/multiplicador.vhd Line: 5
 Info (12127): Elaborating entity "Qualcom_LI" for the top level hierarchy
-Info (12128): Elaborating entity "add1" for hierarchy "add1:port_map_addr" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 203
+Info (12128): Elaborating entity "add1" for hierarchy "add1:port_map_addr" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 206
 Warning (10492): VHDL Process Statement warning at add1.vhd(16): signal "inPort" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/add1.vhd Line: 16
-Info (12128): Elaborating entity "PC" for hierarchy "PC:port_map_pc" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 204
-Info (12128): Elaborating entity "rom_memory" for hierarchy "rom_memory:port_map_rom" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 205
+Info (12128): Elaborating entity "PC" for hierarchy "PC:port_map_pc" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 207
+Info (12128): Elaborating entity "rom_memory" for hierarchy "rom_memory:port_map_rom" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 208
 Warning (10492): VHDL Process Statement warning at rom_memory.vhd(33): signal "rom_memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/rom_memory.vhd Line: 33
 Warning (10492): VHDL Process Statement warning at rom_memory.vhd(33): signal "in_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/rom_memory.vhd Line: 33
-Info (12128): Elaborating entity "divisao_instrucao" for hierarchy "divisao_instrucao:port_map_divisao_intrucao" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 206
-Info (12128): Elaborating entity "unidade_controle" for hierarchy "unidade_controle:port_map_unidade_de_controle" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 207
-Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "bancoRegistradores:port_map_banco_de_registradores" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 208
+Info (12128): Elaborating entity "divisao_instrucao" for hierarchy "divisao_instrucao:port_map_divisao_intrucao" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 209
+Info (12128): Elaborating entity "unidade_controle" for hierarchy "unidade_controle:port_map_unidade_de_controle" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 210
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "bancoRegistradores:port_map_banco_de_registradores" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 211
 Warning (10492): VHDL Process Statement warning at bancoRegistradores.vhd(30): signal "registradores" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd Line: 30
 Warning (10492): VHDL Process Statement warning at bancoRegistradores.vhd(30): signal "addressReg1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd Line: 30
 Warning (10492): VHDL Process Statement warning at bancoRegistradores.vhd(31): signal "registradores" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd Line: 31
 Warning (10492): VHDL Process Statement warning at bancoRegistradores.vhd(31): signal "addressReg2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd Line: 31
-Info (12128): Elaborating entity "bitExtensor2_8" for hierarchy "bitExtensor2_8:port_map_extensor_sinal_2_8" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 209
-Info (12128): Elaborating entity "multiplexador" for hierarchy "multiplexador:port_map_mult1_2x1_br_ula" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 210
-Info (12128): Elaborating entity "ula" for hierarchy "ula:port_map_ula" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 211
-Warning (10492): VHDL Process Statement warning at ula.vhd(43): signal "multi" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 43
-Warning (10631): VHDL Process Statement warning at ula.vhd(34): inferring latch(es) for signal or variable "multi", which holds its previous value in one or more paths through the process File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Warning (10631): VHDL Process Statement warning at ula.vhd(34): inferring latch(es) for signal or variable "s_zero", which holds its previous value in one or more paths through the process File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Warning (10631): VHDL Process Statement warning at ula.vhd(34): inferring latch(es) for signal or variable "in_temp_zero", which holds its previous value in one or more paths through the process File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "in_temp_zero" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "s_zero" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[0]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[1]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[2]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[3]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[4]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[5]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[6]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (10041): Inferred latch for "multi[7]" at ula.vhd(34) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 34
-Info (12128): Elaborating entity "zero" for hierarchy "ula:port_map_ula|zero:port_map_temp_zero" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 32
-Info (12128): Elaborating entity "ram_memory" for hierarchy "ram_memory:port_map_ram" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 212
-Info (12128): Elaborating entity "bitExtensor4_8" for hierarchy "bitExtensor4_8:port_map_extensor_sinal_4_8" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 214
-Info (12128): Elaborating entity "and_gate" for hierarchy "and_gate:port_map_porta_and" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 215
+Info (12128): Elaborating entity "bitExtensor2_8" for hierarchy "bitExtensor2_8:port_map_extensor_sinal_2_8" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 212
+Info (12128): Elaborating entity "multiplexador" for hierarchy "multiplexador:port_map_mult1_2x1_br_ula" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 213
+Info (12128): Elaborating entity "ula" for hierarchy "ula:port_map_ula" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 214
+Warning (10492): VHDL Process Statement warning at ula.vhd(57): signal "somadorOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at ula.vhd(58): signal "overflowSoma" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at ula.vhd(63): signal "multi" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at ula.vhd(64): signal "multi" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at ula.vhd(53): inferring latch(es) for signal or variable "overflow", which holds its previous value in one or more paths through the process File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at ula.vhd(53): inferring latch(es) for signal or variable "s_zero", which holds its previous value in one or more paths through the process File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at ula.vhd(53): inferring latch(es) for signal or variable "in_temp_zero", which holds its previous value in one or more paths through the process File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 53
+Info (10041): Inferred latch for "in_temp_zero" at ula.vhd(53) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 53
+Info (10041): Inferred latch for "s_zero" at ula.vhd(53) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 53
+Info (10041): Inferred latch for "overflow" at ula.vhd(53) File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 53
+Info (12128): Elaborating entity "zero" for hierarchy "ula:port_map_ula|zero:port_map_temp_zero" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 49
+Info (12128): Elaborating entity "multiplicador" for hierarchy "ula:port_map_ula|multiplicador:pot_map_multi" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 50
+Info (12128): Elaborating entity "somador8bit" for hierarchy "ula:port_map_ula|somador8bit:soma" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 51
+Info (12128): Elaborating entity "somador1bit" for hierarchy "ula:port_map_ula|somador8bit:soma|somador1bit:b0" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/somador8bit.vhd Line: 33
+Info (12128): Elaborating entity "ram_memory" for hierarchy "ram_memory:port_map_ram" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 215
+Info (12128): Elaborating entity "bitExtensor4_8" for hierarchy "bitExtensor4_8:port_map_extensor_sinal_4_8" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 217
+Info (12128): Elaborating entity "and_gate" for hierarchy "and_gate:port_map_porta_and" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 218
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "bancoRegistradores:port_map_banco_de_registradores|registradores" is uninferred due to inappropriate RAM size File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/bancoRegistradores.vhd Line: 20
 Warning (14025): LATCH primitive "ula:port_map_ula|s_zero" is permanently disabled File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 12
@@ -612,6 +630,8 @@ Info (12133): Instantiated megafunction "ram_memory:port_map_ram|altsyncram:mem_
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hhu1.tdf
     Info (12023): Found entity 1: altsyncram_hhu1 File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/db/altsyncram_hhu1.tdf Line: 28
+Warning (13012): Latch ula:port_map_ula|overflow has unsafe behavior File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/ula.vhd Line: 13
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PC:port_map_pc|outPort[2] File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/PC.vhd Line: 16
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "outRom[7]" is stuck at GND File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 13
     Warning (13410): Pin "out_opcode[3]" is stuck at GND File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/componentes/Qualcom_LI.vhd Line: 20
@@ -619,15 +639,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ram_memory:port_map_ram|altsyncram:mem_rtl_0|altsyncram_hhu1:auto_generated|ALTSYNCRAM" File: /home/lucas_anderson/Documentos/DCC301_IanSantos_LucasAnderson_UFRR_2022/db/altsyncram_hhu1.tdf Line: 38
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 217 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 219 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 139 logic cells
+    Info (21059): Implemented 69 output pins
+    Info (21061): Implemented 140 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 509 megabytes
-    Info: Processing ended: Tue Dec 13 01:15:04 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 508 megabytes
+    Info: Processing ended: Tue Dec 13 05:02:46 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:14
 
