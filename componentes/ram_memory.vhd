@@ -5,9 +5,9 @@ USE IEEE.numeric_std.all;
 ENTITY ram_memory IS
     port(
         clock : in std_logic;       -- clock
-        in_A      : in std_logic_vector(7 downto 0); -- valor
         mem_write : in std_logic;   -- flag de escrita
         mem_read  : in std_logic;   -- flag de leitura
+		  in_A      : in std_logic_vector(7 downto 0); -- valor
         addr      : in std_logic_vector(7 downto 0); -- endereço
         Sout     : out std_logic_vector(7 downto 0) -- saida
     );

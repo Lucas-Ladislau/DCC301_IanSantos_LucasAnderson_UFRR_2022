@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Mon Dec 12 22:09:52 2022
+Analysis & Synthesis Status : Successful - Tue Dec 13 01:15:04 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : processador
-Top-level Entity Name : subtrator
+Top-level Entity Name : Qualcom_LI
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 24
+Total registers : 40
+Total pins : 69
 Total virtual pins : 0
-Total block memory bits : 0
-Total DSP Blocks : 0
+Total block memory bits : 32
+Total DSP Blocks : 1
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

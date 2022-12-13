@@ -2,7 +2,8 @@ library Ieee;
 Use Ieee.std_logic_1164.all;
 Use Ieee.numeric_std.all;
 
-ENTITY bancoRegistradores IS PORT (
+ENTITY bancoRegistradores IS 
+PORT (
 	clock			: IN std_logic;
 	escreveReg		: IN std_logic;
 	addressReg1		: IN std_logic_vector(1 DOWNTO 0);
