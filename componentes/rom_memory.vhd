@@ -25,7 +25,7 @@ ARCHITECTURE main OF rom_memory IS
         4 => "00000001", -- add = $s0 + $s1
         5 => "00010001", -- sub $s0 $s1
         6 => "00100001", -- mult $s0 $s1
-OTHERS => "00000000"
+			OTHERS => "00000000"
     );
     BEGIN
         PROCESS (clock)

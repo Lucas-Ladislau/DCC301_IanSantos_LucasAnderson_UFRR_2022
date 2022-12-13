@@ -1,5 +1,5 @@
-library Ieee;
-use Ieee.std_logic_1164.All;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY bitExtensor2_8 IS 
 	PORT (

@@ -12,6 +12,6 @@ ARCHITECTURE Behavioral OF multiplexador IS
 BEGIN
 WITH SEL SELECT
     Sout <= A WHEN '0',
-         B WHEN '1';
+				B WHEN '1';
         
 END Behavioral;
