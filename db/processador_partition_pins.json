@@ -4,63 +4,99 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "JUMP",
+					"name" : "Sub[0]",
 					"strict" : false
 				},
 				{
-					"name" : "BRANCH",
+					"name" : "Sub[1]",
 					"strict" : false
 				},
 				{
-					"name" : "MEMREAD",
+					"name" : "Sub[2]",
 					"strict" : false
 				},
 				{
-					"name" : "MEMTOREG",
+					"name" : "Sub[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ALUOP[0]",
+					"name" : "Sub[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ALUOP[1]",
+					"name" : "Sub[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ALUOP[2]",
+					"name" : "Sub[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ALUOP[3]",
+					"name" : "Sub[7]",
 					"strict" : false
 				},
 				{
-					"name" : "MEMWRITE",
+					"name" : "A[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ALUSRC",
+					"name" : "B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "REGWRITE",
+					"name" : "A[1]",
 					"strict" : false
 				},
 				{
-					"name" : "OPCODE[2]",
+					"name" : "B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "OPCODE[3]",
+					"name" : "A[2]",
 					"strict" : false
 				},
 				{
-					"name" : "OPCODE[0]",
+					"name" : "B[2]",
 					"strict" : false
 				},
 				{
-					"name" : "OPCODE[1]",
+					"name" : "A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "B[7]",
 					"strict" : false
 				}
 			]
